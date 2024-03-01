@@ -7,11 +7,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Logs
+*.log
+
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+.idea
 build/
 develop-eggs/
 dist/
