@@ -12,5 +12,5 @@ RUN curl -sSL https://install.python-poetry.org | POETRY_HOME=/opt/poetry python
 COPY ./pyproject.toml ./poetry.lock* /app/
 RUN poetry install
 
-COPY ../* /app/
-CMD [ "gunicorn" ]
+COPY . .
+CMD [ "gunicorn", "main:app", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:80"]
